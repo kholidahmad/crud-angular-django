@@ -1,0 +1,41 @@
+============== DJANGO ================
+
+- buat environtment: python -m venv myenv
+- activate: myenv\Scripts\activate
+- pip install django
+- pip install djangorestframework
+- django-admin startproject namaproject
+- cd namaproject, buka di codeeditor
+- jalankan server: python manage.py runserver
+- buka sqllite studio, import db.sqlite 
+- pip install django-cors-headers
+- tambahkan 'corsheaders' dan 'corsheaders.middleware.CorsMiddleware', 'rest_framework', CORS_ORIGIN_ALLOW_ALL = True di settings.py
+- python manage.py startapp namaapp
+- daftarkan 'EmployeeApp.apps.EmployeeappConfig' di settings.py
+- buat models di models.py
+- python manage.py makemigrations EmployeeApp
+- python manage.py migrate EmployeeApp. berfungsi import schema table ke db
+- buat serializer.py
+- buat views.py
+- buat urls.py di EmployeeApp
+- setting urls utama juga
+- test API dengan postman: methode POST,body, raw: 
+{
+    "DepartmentName": "Teknologi Informasi"
+}
+update:
+{
+    "DepartmentId": 2,
+    "DepartmentName": "Humas"
+}
+
+- untuk upload gambar, tambahkan baris berikut di settings.py:
+import os
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+# direktory menyimpan gambar
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+
+- buat endpointnya di views

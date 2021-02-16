@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col">
+      <h1 class="text-center">CRUD - Angular&Django</h1>
+      <br />
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Department</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dep of departmentList">
+            <td>{{ dep.DepartmentName }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
