@@ -1,1 +1,29 @@
-<p>edit-dep works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="form-group">
+        <label for="DepartmentName">Nama Department</label>
+        <input
+          type="text"
+          class="form-control"
+          name="DepartmentName"
+          [(ngModel)]="DepartmentName"
+        />
+        <button
+          class="btn btn-success float-right mt-3"
+          (click)="addDepartment()"
+          *ngIf="dep.DepartmentId == 0"
+        >
+          <i class="fas fa-plus mr-2"></i> Add
+        </button>
+        <button
+          class="btn btn-warning float-right mt-3"
+          (click)="updateDepartment()"
+          *ngIf="dep.DepartmentId != 0"
+        >
+          <i class="fas fa-save mr-2"></i> Update
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

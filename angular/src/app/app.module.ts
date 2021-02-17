@@ -12,6 +12,7 @@ import { EditEmpComponent } from './employee/edit-emp/edit-emp.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './shared-component/header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     EmployeeComponent,
     ShowEmpComponent,
     EditEmpComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

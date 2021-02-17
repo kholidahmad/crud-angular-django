@@ -1,0 +1,59 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  style="
+    background: linear-gradient(90deg, #2d0097 15%, #3600b4 100%);
+    -webkit-box-shadow: 0px 3px 17px 0px rgba(235, 235, 235, 1);
+    -moz-box-shadow: 0px 3px 17px 0px rgba(235, 235, 235, 1);
+    box-shadow: 0px 3px 17px 0px rgba(235, 235, 235, 1);
+  "
+>
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['/department']"
+      ><strong class="mr-3">CRUD-ng&py</strong>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/department']"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <b>Department</b>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/employee']"
+            routerLinkActive="active"
+          >
+            <b>Employee</b>
+          </a>
+        </li>
+        <!-- <li class="nav-item" *ngIf="!isAuthenticated">
+          <a
+            class="nav-link"
+            [routerLink]="['/auth']"
+            routerLinkActive="active"
+          >
+            <b>Authenticated</b>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>

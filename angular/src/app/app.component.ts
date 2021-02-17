@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     return this.servis.getDepList().subscribe((data) => {
       this.departmentList = data;
-      console.log(data);
+      // console.log(data);
     });
   }
 }
