@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class SharedService {
   APIUrl = 'http://127.0.0.1:8000/';
-  photoUrl = 'http://127.0.0.1:8000/assets/img';
+  photoUrl = 'http://127.0.0.1:8000/assets/img/';
 
   constructor(private http: HttpClient) {}
 
@@ -21,8 +21,8 @@ export class SharedService {
   updateDep(data: any) {
     return this.http.put(this.APIUrl + 'department/', data);
   }
-  deleteDep(data: any) {
-    return this.http.delete(this.APIUrl + 'department/' + data);
+  deleteDep(id: any) {
+    return this.http.delete(this.APIUrl + 'department/' + id);
   }
 
   // EMPLOYEE
@@ -31,17 +31,17 @@ export class SharedService {
   }
 
   addEmp(data: any) {
-    return this.http.post<any[]>(this.APIUrl + 'employee', data);
+    return this.http.post<any[]>(this.APIUrl + 'employee/', data);
   }
   updateEmp(data: any) {
-    return this.http.put<any[]>(this.APIUrl + 'department/', data);
+    return this.http.put<any[]>(this.APIUrl + 'employee/', data);
   }
-  deleteEmp(data: any) {
-    return this.http.delete<any[]>(this.APIUrl + 'department/' + data);
+  deleteEmp(id: any) {
+    return this.http.delete<any[]>(this.APIUrl + 'employee/' + id);
   }
 
   // UPLOAD
   uploadFoto(data: any) {
-    return this.http.post<any[]>(this.APIUrl + 'SaveFile', data);
+    return this.http.post<any[]>(this.APIUrl + 'SaveFile/', data);
   }
 }

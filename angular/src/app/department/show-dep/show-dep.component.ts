@@ -55,7 +55,7 @@ export class ShowDepComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.servis.deleteDep(id).subscribe((resp) => {
-          Swal.fire('Deleted!', resp.toString(), 'success');
+          Swal.fire(resp.toString(), '', 'success');
           this.refreshDepList();
         });
       }

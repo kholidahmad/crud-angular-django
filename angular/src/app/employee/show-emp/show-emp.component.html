@@ -1,1 +1,92 @@
-<p>show-employee-works</p>
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-primary mb-3"
+  data-toggle="modal"
+  data-target="#ModalEmployee"
+  data-backdrop="static"
+  data-keyboard="false"
+  (click)="addClick()"
+>
+  <span><i class="fas fa-plus mr-2"></i> Tambah Employee</span>
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="ModalEmployee"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ modalTitle }}</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+          (click)="closeClick()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-edit-emp [emp]="emp" *ngIf="modeEdit"></app-edit-emp>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal -->
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Foto</th>
+      <th scope="col">Nama</th>
+      <th scope="col">Department</th>
+      <th scope="col">Tgl Gabung</th>
+      <th scope="col">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of EmployeeList; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>
+        <img
+          [src]="photoPath + dataItem.PhotoFileName"
+          alt=" {{ dataItem.PhotoFileName }} "
+          width="50px;"
+        />
+      </td>
+      <td>{{ dataItem.EmployeeName }}</td>
+      <td>{{ dataItem.Department }}</td>
+      <td>{{ dataItem.DateOfJoining }}</td>
+      <td class="m-auto">
+        <button
+          type="button"
+          class="btn btn-primary mb-3"
+          data-toggle="modal"
+          data-target="#ModalEmployee"
+          data-backdrop="static"
+          data-keyboard="false"
+          class="btn mr-2"
+          (click)="updateClick(dataItem)"
+        >
+          <i class="fas fa-edit text-warning"></i> edit
+        </button>
+        <button
+          type="button"
+          class="btn mr-2"
+          (click)="deleteClick(dataItem.EmployeeId)"
+        >
+          <i class="fas fa-trash text-danger"></i> hapus
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
